@@ -1,0 +1,139 @@
+.backdrop {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+    visibility: visible;
+    opacity: 1;
+    pointer-events: initial;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    transition: opacity $transition, visibility $transition;
+}
+
+.backdrop.is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 528px;
+    height: 581px;
+    padding: 40px;
+
+    transform: translate(-50%, -50%);
+
+    background: $mainLightBg;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+}
+
+.form-modal__txt {
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    margin-bottom: 12px;
+}
+
+.form-modal__label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+
+    margin-bottom: 10px;
+
+    color: $secondaryTextColor;
+
+    &:nth-child(5) {
+        margin-bottom: 0;
+    }
+}
+
+.form-modal__input {
+    position: relative;
+    margin-top: 4px;
+    height: 40px;
+    padding: 12px 0 12px 42px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: border $transition;
+
+    &:focus {
+        outline: transparent;
+        border: 1px solid $accentColor;
+    }
+}
+
+.form-modal__icon {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    width: 18px;
+    height: 18px;
+
+    .form-modal__input:focus+& {
+        fill: $accentColor;
+        transition: fill $transition;
+    }
+}
+
+.form-modal__comment {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    padding: 12px 16px;
+    margin-top: 4px;
+    resize: none;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition: border $transition;
+
+    &:focus {
+        outline: transparent;
+        border: 1px solid $accentColor;
+    }
+    &::placeholder {
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+    
+        color: rgba(117, 117, 117, 0.5);
+    }
+}

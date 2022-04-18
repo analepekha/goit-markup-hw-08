@@ -1,0 +1,137 @@
+.footer {
+    background-color: $mainDarkBg;
+    display: flex;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer__content {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer__logo {
+    display: inline-block;
+}
+
+.footer__location {
+    width: 227px;
+    margin-top: 20px;
+    line-height: 1.7;
+    font-style: normal;
+
+    color: $mainLightText;
+}
+
+.footer__contacts {
+    margin-top: 9px;
+}
+
+.footer__contacts .contacts-footer__item+.contacts-footer__item {
+    margin-top: 9px;
+}
+
+.contacts-footer__link {
+    text-decoration: none;
+    font-style: normal;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer__join {
+    margin-left: 70px;
+}
+
+.footer__title {
+    font-size: 14px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    color: $mainLightText;
+}
+
+.footer__socials {
+    display: flex;
+
+    & .solials-footer__item:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+.solials-footer__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 44px;
+    height: 44px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+
+    transition: background-color $transition;
+
+    &:hover,
+    &:focus {
+        background-color: $accentColor;
+    }
+}
+
+.solials-footer__icons {
+    display: inline-block;
+    fill: $mainLightBg;
+    width: 20px;
+    height: 20px;
+}
+
+.footer__subscribe {
+    margin-left: 93px;
+}
+
+.subscribe__title {
+    font-size: 14px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    color: $mainLightText;
+}
+
+.subscribe__input {
+    font-size: 16px;
+    line-height: 1.25;
+    padding-left: 16px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 12px;
+
+    width: 358px;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    cursor: pointer;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    &:focus {
+        outline: transparent;
+        background: transparent;
+    }
+}
+
+.subscribe__icon {
+    position: absolute;
+    bottom: 13px;
+    right: 28px;
+
+    width: 24px;
+    height: 24px;
+
+    fill: $mainLightBg;
+    cursor: pointer;
+}
