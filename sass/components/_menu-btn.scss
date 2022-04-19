@@ -1,0 +1,51 @@
+.menu-btn {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    outline: transparent;
+    border: transparent;
+    background-color: transparent;
+    z-index: 99;
+
+    
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        transform: translate(-50%, -50%);
+
+        
+    }
+
+    &__icon-open {
+        opacity: 1;
+        fill: $mainTextColor;
+
+        transition: fill $transition;
+    }
+    &__icon-close {
+        opacity: 0;
+        fill: $mainTextColor;
+
+        transition: fill $transition;
+    }
+
+    @media screen and (min-width: 768px) {
+    display: none;
+    }
+}
+
+.menu-btn.is-active .menu-btn__icon-open {
+    opacity: 0;
+}  
+.menu-btn.is-active .menu-btn__icon-close {
+    opacity: 1;    
+}
+.menu-btn__icon-open:hover,
+.menu-btn__icon-open:focus {
+    fill: $accentColor;
+}
