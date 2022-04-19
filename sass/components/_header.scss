@@ -6,10 +6,18 @@
 .header__container {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 767px) {
+    justify-content: space-between;
+    }
 }
 
 .nav {
-    margin-left: 93px;
+    display: none;
+
+
+    // margin-left: 93px;
+
 }
 
 .nav__list {
@@ -65,7 +73,7 @@
 }
 
 .contacts-header {
-    display: flex;
+    display: none;
     margin-left: auto;
     align-items: center;
 }
