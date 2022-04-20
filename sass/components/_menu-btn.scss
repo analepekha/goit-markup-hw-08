@@ -8,8 +8,6 @@
     background-color: transparent;
     z-index: 99;
 
-    
-
     &__icon {
         position: absolute;
         top: 50%;
@@ -17,8 +15,6 @@
         width: 40px;
         height: 40px;
         transform: translate(-50%, -50%);
-
-        
     }
 
     &__icon-open {
@@ -27,6 +23,7 @@
 
         transition: fill $transition;
     }
+
     &__icon-close {
         opacity: 0;
         fill: $mainTextColor;
@@ -41,11 +38,18 @@
 
 .menu-btn.is-active .menu-btn__icon-open {
     opacity: 0;
-}  
+}
+
 .menu-btn.is-active .menu-btn__icon-close {
     opacity: 1;    
 }
-.menu-btn__icon-open:hover,
-.menu-btn__icon-open:focus {
+
+.menu-btn:hover .menu-btn__icon-open,
+.menu-btn:focus .menu-btn__icon-open {
+    fill: $accentColor;
+}
+
+.menu-btn:hover .menu-btn__icon-close,
+.menu-btn:focus .menu-btn__icon-close {
     fill: $accentColor;
 }
