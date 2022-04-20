@@ -146,13 +146,19 @@ img {
   text-decoration: none;
 }
 
-.link-tel {
+.link-first-child {
   font-size: 34px;
   line-height: 1.17;
   color: #2196f3;
 }
 
-.link-mail {
+@media screen and (max-width: 479px) {
+  .link-first-child {
+    font-size: 27px;
+  }
+}
+
+.link-second-child {
   font-size: 24px;
   line-height: 1.16;
   color: #757575;
@@ -162,12 +168,24 @@ img {
   display: flex;
 }
 
+@media screen and (max-width: 479px) {
+  .mobile-socials {
+    flex-wrap: wrap;
+  }
+}
+
 .mobile-solials__item:not(:last-child) {
   margin-right: 20px;
 }
 
 .mobile-solials__item {
   position: relative;
+}
+
+@media screen and (max-width: 479px) {
+  .mobile-solials__item {
+    margin-bottom: 10px;
+  }
 }
 
 .mobile-solials__item:not(:last-child):after {
@@ -213,13 +231,13 @@ img {
 .menu-btn__icon-open {
   opacity: 1;
   fill: #212121;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-btn__icon-close {
   opacity: 0;
   fill: #212121;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -236,8 +254,13 @@ img {
   opacity: 1;
 }
 
-.menu-btn__icon-open:hover,
-.menu-btn__icon-open:focus {
+.menu-btn:hover .menu-btn__icon-open,
+.menu-btn:focus .menu-btn__icon-open {
+  fill: #2196f3;
+}
+
+.menu-btn:hover .menu-btn__icon-close,
+.menu-btn:focus .menu-btn__icon-close {
   fill: #2196f3;
 }
 
@@ -252,7 +275,7 @@ img {
   cursor: pointer;
   color: #ffffff;
   background-color: #2196f3;
-  transition: background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero__btn {
@@ -277,7 +300,7 @@ img {
   cursor: pointer;
   color: #212121;
   background-color: #f5f4fa;
-  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover, .filter-btn:focus {
@@ -311,7 +334,7 @@ img {
   border-color: rgba(0, 0, 0, 0.1);
   background: #ffffff;
   cursor: pointer;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__btn:hover {
@@ -353,7 +376,25 @@ img {
 }
 
 .nav {
-  display: none;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    margin-left: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav {
+    margin-left: 93px;
+  }
 }
 
 .nav__list {
@@ -372,7 +413,7 @@ img {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: #212121;
-  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav__link:hover, .nav__link:focus {
@@ -402,33 +443,74 @@ img {
 }
 
 .contacts-header {
-  display: none;
-  margin-left: auto;
+  display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .contacts-header {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-header {
+    flex-wrap: wrap;
+    margin-left: 84px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-header {
+    margin-left: auto;
+  }
 }
 
 .contacts-header__item {
   display: flex;
 }
 
-.contacts-header .contacts-header__item + .contacts-header__item {
-  margin-left: 30px;
+@media screen and (min-width: 768px) {
+  .contacts-header__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-header__item:not(:last-child) {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
 }
 
 .contacts-header__link {
   display: flex;
   align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  text-decoration: none;
   font-weight: 500;
   letter-spacing: 0.02em;
+  text-decoration: none;
   color: #757575;
-  transition: color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-header__link:hover, .contacts-header__link:focus {
   color: #2196f3;
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-header__link {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contacts-header__link {
+    font-size: 14px;
+    line-height: 1.14;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
 .contacts-header__icon {
@@ -632,7 +714,7 @@ img {
   height: 44px;
   background-color: #ffffff;
   border-radius: 50%;
-  transition: background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials__link:hover, .socials__link:focus {
@@ -644,7 +726,7 @@ img {
   fill: #afb1b8;
   width: 20px;
   height: 20px;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials__link:hover .socials__icons,
@@ -669,7 +751,7 @@ img {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
-  transition: border 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients__link:hover, .clients__link:focus {
@@ -682,7 +764,7 @@ img {
   width: 106px;
   height: 60px;
   fill: #afb1b8;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients__link:hover .clients__icons,
@@ -756,7 +838,7 @@ img {
   height: 44px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: background-color 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .solials-footer__link:hover, .solials-footer__link:focus {
@@ -823,7 +905,7 @@ img {
   opacity: 1;
   pointer-events: initial;
   background: rgba(0, 0, 0, 0.2);
-  transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -886,7 +968,7 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
-  transition: border 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-modal__input:focus {
@@ -904,7 +986,7 @@ img {
 
 .form-modal__input:focus + .form-modal__icon {
   fill: #2196f3;
-  transition: fill 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-modal__comment {
@@ -917,7 +999,7 @@ img {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
-  transition: border 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-modal__comment:focus {
@@ -960,7 +1042,7 @@ img {
   border-radius: 2px;
   transform: translateY(-50%);
   opacity: 1;
-  transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox__input:checked + .checkbox__border {
@@ -979,7 +1061,7 @@ img {
   fill: #ffffff;
   border-radius: 2px;
   opacity: 0;
-  transition: opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox__input:checked ~ .checkbox__icon {
@@ -1034,7 +1116,7 @@ img {
   display: block;
   text-decoration: none;
   color: #212121;
-  transition: box-shadow 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link:hover, .portfolio-link:focus {
@@ -1059,7 +1141,7 @@ img {
   color: white;
   background: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
-  transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1), opacity 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
 }
 
