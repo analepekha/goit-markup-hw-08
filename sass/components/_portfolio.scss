@@ -1,29 +1,65 @@
 .portfolio {
-    display: flex;
+   display: flex;
+    
 }
 
 .filter-list {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+    @media screen and(max-width:767px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+
+    }
+    @media screen and(min-width:768px) and (max-width:1199px) {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    @media screen and(min-width:1200px) {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    
+}
+.filter-item {
+    @media screen and(max-width:767px) {
+        margin-bottom: 15px;
+    }
 }
 
 .filter-item:not(:last-child) {
+    
     margin-right: 8px;
 }
 
 .portfolio-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -30px;
-    margin-bottom: -30px;
+    @media screen and(min-width:768px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -30px;
+        margin-bottom: -30px;
+    }
 }
 
 .portfolio-item {
+    @media screen and(min-width:768px) and (max-width:1199px) {
+        width: calc((100% - 60px) / 2);
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+    @media screen and(min-width:1200px) {
     width: calc((100% - 90px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
+    }
 }
+.portfolio-item:not(:last-child){
+    @media screen and(max-width:767px) {
+        margin-bottom: 30px; 
+    }
+}
+
 
 .portfolio-img {
     max-width: 100%;
@@ -81,6 +117,9 @@
     .portfolio-link:hover & {
         transform: translate(0);
         opacity: 1;
+    }
+    @media screen and(max-width:767px) {
+        padding: 77px 24px;
     }
 }
 
