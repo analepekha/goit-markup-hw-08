@@ -597,27 +597,65 @@ img {
 .hero {
   text-align: center;
   background-color: #c4c4c4;
-  padding: 200px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    padding: 118px 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    padding: 200px 0;
+  }
 }
 
 .hero-overlay {
-  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
+}
+
+@media screen and (max-width: 767px) {
+  .hero-overlay {
+    max-width: 480px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero-sm.jpg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-overlay {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .hero__title {
-  max-width: 696px;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: #ffffff;
+}
+
+@media screen and (max-width: 767px) {
+  .hero__title {
+    max-width: 360px;
+    font-size: 26px;
+    line-height: 1.62;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    max-width: 696px;
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .benefits {
@@ -705,6 +743,12 @@ img {
   color: #757575;
 }
 
+@media screen and (max-width: 1199px) {
+  .occupation {
+    display: none;
+  }
+}
+
 .occupation__list {
   display: flex;
 }
@@ -739,7 +783,13 @@ img {
 }
 
 .team__list {
-  display: flex;
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .team__list {
+    display: flex;
+  }
 }
 
 .team__item {
@@ -748,11 +798,20 @@ img {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team__item:not(:last-child) {
-  margin-right: 30px;
+@media screen and (max-width: 767px) {
+  .team__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .team__item:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .team__content {
+  width: 450px;
   padding: 30px 32px;
 }
 
@@ -774,6 +833,7 @@ img {
 
 .socials {
   display: flex;
+  justify-content: center;
 }
 
 .socials .socials__item:not(:last-child) {
