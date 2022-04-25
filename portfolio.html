@@ -19,15 +19,21 @@
 <body>
     <!-- Шапка сайта  -->
     <header class="header">
-        <div class="container header__container">
+        <div class="container header__container ">
             <a class="logo header__logo" href="./index.html">Web<span class="logo--header">Studio</span></a>
+            <button class="menu-btn" aria-label="Кнопка открытия меню" aria-expanded="false" data-menu-button>
+                <svg class="menu-btn__icon" width="40" height="40">
+                    <use class="menu-btn__icon-open" href="./images/icons.svg#menu-burger"></use>
+                    <use class="menu-btn__icon-close" href="./images/icons.svg#menu-close"></use>
+                </svg>
+            </button>
             <nav class="nav">
                 <ul class="list nav__list">
                     <li class="nav__item">
-                        <a class="nav__link" href="./index.html">Студия</a>
+                        <a class="nav__link--current" href="./index.html">Студия</a>
                     </li>
                     <li class="nav__item">
-                        <a class="nav__link--current" href="./portfolio.html">Портфолио</a>
+                        <a class="nav__link" href="./portfolio.html">Портфолио</a>
                     </li>
                     <li class="nav__item">
                         <a class="nav__link" href="#contacts">Контакты</a>
@@ -37,7 +43,7 @@
             <ul class="list header__list contacts-header">
                 <li class="contacts-header__item">
                     <a class="contacts-header__link" href="mailto:info@devstudio.com">
-                        <svg class="contacts-header__icon" width="16" height="12">
+                        <svg class="contacts-header__icon contacts-header--mail" width="14" height="10">
                             <use href="./images/icons.svg#envelope"></use>
                         </svg>
                         info@devstudio.com
@@ -45,7 +51,7 @@
                 </li>
                 <li class="contacts-header__item">
                     <a class="contacts-header__link" href="tel:+38096111111">
-                        <svg class="contacts-header__icon" width="10" height="16">
+                        <svg class="contacts-header__icon contacts-header--tel" width="10" height="14">
                             <use href="./images/icons.svg#smartphone"></use>
                         </svg>
                         +38 096 111 11 11
@@ -53,12 +59,13 @@
                 </li>
             </ul>
         </div>
+        </div>
     </header>
     <!-- Уникальный контент -->
     <main>
         <section class="portfolio section">
             <div class="container">
-                <h1 class="visually-hidden">Портфолио</h1>
+                <!-- <h1 class="visually-hidden">Портфолио</h1> -->
                 <!-- Фильтр страницы -->
                 <ul class="list filter-list">
                     <li class="filter-item">
@@ -82,8 +89,49 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-1.jpg" alt="изображение команды" width="370"
+                                <picture>
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 1200px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/portfolio/pic-1-lg.jpg 1x,
+                                        ./images/portfolio/pic-1-lg@2x.jpg 2x" 
+                                    media="(min-width: 1200px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 768px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/portfolio/pic-1-md.jpg 1x,
+                                        ./images/portfolio/pic-1-md@2x.jpg 2x" 
+                                    media="(min-width: 768px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(max-width: 767px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="./images/portfolio/pic-1-sm@2x.jpg2x" 
+                                    media="(max-width: 767px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <img class="portfolio-img" src="./images/portfolio/pic-1-sm.jpg" 
+                                    alt="изображение команды" 
+                                    width="450"
                                     height="294">
+                                </picture>
                                 <div class="overlay">
                                     <p>
                                     Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -101,8 +149,49 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-2.jpg" alt="изображение постера"
-                                width="370" height="294">
+                                <picture>
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 1200px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/portfolio/pic-2-lg.jpg 1x,
+                                        ./images/portfolio/pic-2-lg@2x.jpg 2x" 
+                                    media="(min-width: 1200px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 768px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/portfolio/pic-2-md.jpg 1x,
+                                        ./images/portfolio/pic-2-md@2x.jpg 2x" 
+                                    media="(min-width: 768px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(max-width: 767px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="./images/portfolio/pic-2-sm@2x.jpg 2x" 
+                                    media="(max-width: 767px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <img class="portfolio-img" src="./images/portfolio/pic-2-sm.jpg" 
+                                    alt="изображение постера"
+                                    width="450" 
+                                    height="294">
+                                </picture>
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -120,8 +209,46 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-3.jpg"
-                                        alt="логотип ресторана Seafood" width="370" height="294">
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-3-sm.jpg"
+                                        alt="логотип ресторана Seafood" width="450" height="294">
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -139,8 +266,46 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-4.jpg"
-                                        alt="изображение наушников" width="370" height="294">
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-4-sm.jpg"
+                                        alt="изображение наушников" width="450" height="294">
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -158,8 +323,46 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-5.jpg"
-                                        alt="изображение подарочных коробок" width="370" height="294">
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-5-sm.jpg"
+                                        alt="изображение подарочных коробок" width="450" height="294">
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -177,8 +380,46 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-6.jpg"
-                                        alt="изображение монитора компьютера" width="370" height="294">
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-6-sm.jpg"
+                                        alt="изображение монитора компьютера" width="450" height="294">
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -196,8 +437,46 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-7.jpg"
-                                        alt="изображение книги" width="370" height="294">
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-7-sm.jpg"
+                                        alt="изображение книги" width="450" height="294">
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -215,7 +494,45 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-8.jpg" alt="изображение ноутбука" width="370"
+                                <picture>
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 1200px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-lg.jpg 1x,
+                                ./images/team/pic-4-lg@2x.jpg 2x" 
+                            media="(min-width: 1200px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(min-width: 768px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="
+                                ./images/team/pic-4-md.jpg 1x,
+                                ./images/team/pic-4-md@2x.jpg 2x" 
+                            media="(min-width: 768px)" 
+                            type="image/jpeg" 
+                            />
+                            <!-- <source srcset="
+                                ./images/gallery/pic-1_sm.webp    1x,
+                                ./images/gallery/pic-1_sm@2x.webp 2x
+                            " 
+                            media="(max-width: 767px)" 
+                            type="image/webp" 
+                            /> -->
+                            <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                            media="(max-width: 767px)" 
+                            type="image/jpeg" 
+                            />
+                                <img class="portfolio-img" src="./images/portfolio/pic-8-sm.jpg" alt="изображение ноутбука" width="450"
                                 height="294">
                                 <div class="overlay">
                                      <p>
@@ -234,8 +551,47 @@
                     <li class="portfolio-item">
                         <a class="portfolio-link" href="">
                             <div class="portfolio-thumb">
-                                <img class="portfolio-img" src="./images/portfolio/img-9.jpg"
-                                        alt="изображение ноутбука" width="370" height="294">
+                                <picture>
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 1200px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/team/pic-4-lg.jpg 1x,
+                                        ./images/team/pic-4-lg@2x.jpg 2x" 
+                                    media="(min-width: 1200px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(min-width: 768px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="
+                                        ./images/team/pic-4-md.jpg 1x,
+                                        ./images/team/pic-4-md@2x.jpg 2x" 
+                                    media="(min-width: 768px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <!-- <source srcset="
+                                        ./images/gallery/pic-1_sm.webp    1x,
+                                        ./images/gallery/pic-1_sm@2x.webp 2x
+                                    " 
+                                    media="(max-width: 767px)" 
+                                    type="image/webp" 
+                                    /> -->
+                                    <source srcset="./images/team/pic-4-sm@2x.jpg 2x" 
+                                    media="(max-width: 767px)" 
+                                    type="image/jpeg" 
+                                    />
+                                    <img class="portfolio-img" src="./images/portfolio/pic-9-sm.jpg"
+                                            alt="изображение ноутбука" width="450" height="294">
+                                </picture>
                                 <div class="overlay">
                                     <p>
                                         Ресурс предлагает комплексные предложения с разным уровнем функционала и сервисов. Все это позволит
@@ -257,52 +613,54 @@
     <!-- Подвал сайта (контакты) -->
     <footer class="footer">
         <div class="container footer__content">
-            <div class="footer__address">
-                <a class="logo footer__logo" href="./index.html">Web<span class="logo--footer">Studio</span></a>
-                <address class="footer__location" id="contacts">
-                    г. Киев, пр-т Леси Украинки, 26
-                    <ul class="list footer__contacts contacts-footer">
-                        <li class="contacts-footer__item">
-                            <a class="contacts-footer__link" href="mailto:info@example.com">info@example.com</a>
+            <div class="tablet">
+                <div class="footer__address">
+                    <a class="logo footer__logo" href="./index.html">Web<span class="logo--footer">Studio</span></a>
+                    <address class="footer__location" id="contacts">
+                        г. Киев, пр-т Леси Украинки, 26
+                        <ul class="list footer__contacts contacts-footer">
+                            <li class="contacts-footer__item">
+                                <a class="contacts-footer__link" href="mailto:info@example.com">info@example.com</a>
+                            </li>
+                            <li class="contacts-footer__item">
+                                <a class="contacts-footer__link" href="tel:+380991111111">+38 099 111 11 11</a>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer__join">
+                    <h2 class="footer__title">присоединяйтесь</h2>
+                    <ul class="list footer__socials solials-footer">
+                        <li class="solials-footer__item">
+                            <a class="solials-footer__link" href="" aria-label="Instagram">
+                                <svg class="solials-footer__icons" width="20" height="20">
+                                    <use href="./images/icons.svg#instagram"></use>
+                                </svg>
+                            </a>
                         </li>
-                        <li class="contacts-footer__item">
-                            <a class="contacts-footer__link" href="tel:+380991111111">+38 099 111 11 11</a>
+                        <li class="solials-footer__item">
+                            <a class="solials-footer__link" href="" aria-label="Twitter">
+                                <svg class="solials-footer__icons" width="20" height="20">
+                                    <use href="./images/icons.svg#twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="solials-footer__item">
+                            <a class="solials-footer__link" href="" aria-label="Facebook">
+                                <svg class="solials-footer__icons" width="20" height="20">
+                                    <use href="./images/icons.svg#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="solials-footer__item">
+                            <a class="solials-footer__link" href="" aria-label="LindedIn">
+                                <svg class="solials-footer__icons" width="20" height="20">
+                                    <use href="./images/icons.svg#linkedin"></use>
+                                </svg>
+                            </a>
                         </li>
                     </ul>
-                </address>
-            </div>
-            <div class="footer__join">
-                <h2 class="footer__title">присоединяйтесь</h2>
-                <ul class="list footer__socials solials-footer">
-                    <li class="solials-footer__item">
-                        <a class="solials-footer__link" href="" aria-label="Instagram">
-                            <svg class="solials-footer__icons" width="20" height="20">
-                                <use href="./images/icons.svg#instagram"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="solials-footer__item">
-                        <a class="solials-footer__link" href="" aria-label="Twitter">
-                            <svg class="solials-footer__icons" width="20" height="20">
-                                <use href="./images/icons.svg#twitter"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="solials-footer__item">
-                        <a class="solials-footer__link" href="" aria-label="Facebook">
-                            <svg class="solials-footer__icons" width="20" height="20">
-                                <use href="./images/icons.svg#facebook"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="solials-footer__item">
-                        <a class="solials-footer__link" href="" aria-label="LindedIn">
-                            <svg class="solials-footer__icons" width="20" height="20">
-                                <use href="./images/icons.svg#linkedin"></use>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
+                </div>
             </div>
             <div class="footer__subscribe">
                 <form class="footer__form subscribe">
