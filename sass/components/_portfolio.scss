@@ -4,26 +4,24 @@
 }
 
 .filter-list {
-    @media screen and(max-width:767px) {
-        display: flex;
+    display: flex;
+    @include mq(mobile-only) {
         flex-wrap: wrap;
         margin-bottom: 40px;
 
     }
-    @media screen and(min-width:768px) and (max-width:1199px) {
-        display: flex;
+    @include mq(tablet-only) {
         justify-content: center;
         margin-bottom: 30px;
     }
-    @media screen and(min-width:1200px) {
-        display: flex;
+    @include mq(desktop) {
         justify-content: center;
         margin-bottom: 50px;
     }
     
 }
 .filter-item {
-    @media screen and(max-width:767px) {
+    @include mq(mobile-only) {
         margin-bottom: 15px;
     }
 }
@@ -34,7 +32,7 @@
 }
 
 .portfolio-list {
-    @media screen and(min-width:768px) {
+    @include mq(tablet) {
         display: flex;
         flex-wrap: wrap;
         margin-right: -30px;
@@ -43,19 +41,18 @@
 }
 
 .portfolio-item {
-    @media screen and(min-width:768px) and (max-width:1199px) {
-        width: calc((100% - 60px) / 2);
-        margin-right: 30px;
-        margin-bottom: 30px;
-    }
-    @media screen and(min-width:1200px) {
-    width: calc((100% - 90px) / 3);
     margin-right: 30px;
     margin-bottom: 30px;
+    @include mq(tablet-only) {
+        width: calc((100% - 60px) / 2);
+    }
+    @include mq(desktop) {
+    width: calc((100% - 90px) / 3);
     }
 }
+
 .portfolio-item:not(:last-child){
-    @media screen and(max-width:767px) {
+    @include mq(mobile-only) {
         margin-bottom: 30px; 
     }
 }
@@ -125,11 +122,11 @@
         font-size: 18px;
         padding: 77px 24px;
     }
-    @media screen and(min-width:768px) {
+    @include mq(tablet-only) {
         font-size: 18px;
         padding: 49px 24px 77px 24px;
     }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         padding: 63px 24px;
     }
 }
