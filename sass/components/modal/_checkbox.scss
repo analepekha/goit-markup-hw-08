@@ -3,26 +3,30 @@
     display: block;
     margin-top: 20px;
     margin-bottom: 30px;
+    font-size: 12px;
     text-align: right;
-
-    padding-right: 11px;
-    padding-left: 12px;
-
-    line-height: 1.71;
-
+    
+    line-height: 1.16;
     letter-spacing: 0.03em;
 
     color: $secondaryTextColor;
-}
 
-.checkbox {
-    position: relative;
+    @media screen and (max-width:479px) {
+        text-align: center;
+        padding-left: 10px;
+    }
+    @media screen and (min-width:1200px) {
+        font-size: 14px;
+        line-height: 1.71;
+        padding-right: 11px;
+        padding-left: 12px;
+    }
 }
 
 .checkbox__border {
     position: absolute;
-    left: 12px;
-    top: 50%;
+    left: 0;
+    top: 0;
 
     width: 16px;
     height: 15px;
@@ -31,25 +35,30 @@
     border: 2px solid $mainTextColor;
     border-radius: 2px;
 
-    transform: translateY(-50%);
+    
     opacity: 1;
     transition: opacity $transition;
 
     .checkbox__input:checked + & {
         opacity: 0;
     }
+
+    @media screen and (min-width:1200px) {
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 .checkbox__icon {
     display: inline-block;
     position: absolute;
-    top: 50%;
-    left: 12px;
+    top: 0;
+    left: 0;
 
     width: 16px;
     height: 15px;
 
-    transform: translateY(-50%);
     background-color: $accentColor;
     fill: $mainLightBg;
     border-radius: 2px;
@@ -60,9 +69,17 @@
     .checkbox__input:checked ~ & {
         opacity: 1;
     }
+    @media screen and (min-width:1200px) {
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
+
 
 .checkbox__link {
     text-decoration-line: underline;
     color: $accentColor;
+
+    
 }
