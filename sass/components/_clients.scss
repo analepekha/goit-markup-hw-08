@@ -1,19 +1,10 @@
 .clients__list {
     display: flex;
-    // margin-right: 0;
-    // margin-bottom: 0;
-    @media screen and(max-width:767px) {
+    
+    @include mq(notDesktop) {
         flex-wrap: wrap;
         margin-right: -30px;
         margin-bottom: -30px;
-    }
-    @media screen and(min-width:768px) and(max-width:1199px) {
-        flex-wrap: wrap;
-        margin-right: -30px;
-        margin-bottom: -30px;
-    }
-    @media screen and(min-width:1200px) {
-        
     }
 }
 
@@ -21,27 +12,24 @@
     margin-right: 30px;
     margin-bottom: 30px;
 
-    @media screen and(max-width:767px) {
+    @include mq(mobile-only) {
         width: calc((100% - 60px) / 2);
     }
 
-    @media screen and(min-width:768px) {
+    @include mq(tablet) {
         width: calc((100% - 90px) / 3);
     }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         margin-bottom: 0;
         margin-right: 0;
     }
 }
 
 .clients__item:not(:last-child){
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         margin-right: 30px;
     }
 }
-
-
-
 
 .clients__link {
     display: flex;
