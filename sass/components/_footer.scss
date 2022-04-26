@@ -4,69 +4,45 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         display: flex;
     }
 }
 
 .footer__content {
-    @media screen and(min-width:768px) {
-    }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         display: flex;
-        align-items: baseline;
-        margin: 0 auto;
-        width: 1200px;
-        
+        align-items: baseline;        
     } 
 }
 .tablet {
-    @media screen and(min-width:768px) and (max-width:1199px) {
-        display: flex;
-        align-items: baseline;
-        // justify-content: space-around;
-    }
-    @media screen and(min-width:1200px) {
+    @include mq(tablet) {
         display: flex;
         align-items: baseline;
     }
-    
 }
 
 .footer__address {
-    @media screen and(max-width:767px) {
-        text-align: center;
-    }
-    @media screen and(min-width:768px) and (max-width:1199px) {
-        text-align: center;
+    text-align: center;
+
+    @include mq(tablet-only) {
         width: 232px;
         margin-left: 61px;
         margin-right: 165px;
     }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         width: 232px;
         text-align: left;
         margin-left: 0;
         
     }
 }
-// .footer__logo {
-//     display: block;
-//     text-align: center;
-
-//     @media screen and(min-width:1200px) {
-//         display: inline-block;
-//     }
-// }
-
 .footer__location {
     margin-top: 20px;
     line-height: 1.7;
     font-style: normal;
 
     color: $mainLightText;
-    
-    
 }
 
 .footer__contacts {
@@ -87,11 +63,11 @@
 .footer__join {
     text-align: center;
     margin-top: 60px;
-    @media screen and(min-width:768px) {
+    @include mq(tablet) {
         margin-top: 0;
         align-items: baseline;
     }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         margin-left: 70px;
     }
 }
@@ -143,16 +119,10 @@
 
 .footer__subscribe {
     display: block;
-    @media screen and(max-width:767px) {
-        text-align: center;
-        margin-top: 60px;
-    }
-
-    @media screen and(min-width:768px) {
-        text-align: center;
-        margin-top: 60px;
-    }
-    @media screen and(min-width:1200px) {
+    text-align: center;
+    margin-top: 60px;
+    
+    @include mq(desktop) {
         margin-left: 93px;
         margin-top: 0;
         text-align: left;
@@ -160,7 +130,7 @@
 }
 
 .subscribe {
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         display: flex;
     }
 }
@@ -176,13 +146,13 @@
 
 .subscribe__input {
     display: block;
-
-    
     font-size: 16px;
     line-height: 1.25;
     padding-left: 16px;
     padding-top: 15px;
     padding-bottom: 15px;
+
+    margin-bottom: 20px;
 
     background: transparent;
 
@@ -197,17 +167,15 @@
         outline: transparent;
         background: transparent;
     }
-    @media screen and(max-width:767px) {
+    @include mq(mobile-only) {
         width: 100%;
-        margin-bottom: 20px;
     }
-    @media screen and(min-width:768px) {
+    @include mq(tablet) {
         width: 450px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 20px;
     }
-    @media screen and(min-width:1200px) {
+    @include mq(desktop) {
         width: 358px;
         margin-right: 12px;
         margin-left: 0;
