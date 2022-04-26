@@ -1,5 +1,4 @@
 .menu-btn {
-    
     position: relative;
     display: flex;
     justify-content: center;
@@ -10,12 +9,8 @@
     z-index: 6;
 
     &__icon {
-        // position: absolute;
-        // top: 50%;
-        // left: 50%;
         width: 40px;
         height: 40px;
-        // transform: translate(-50%, -50%);
     }
 
     &__icon-open {
@@ -32,9 +27,13 @@
         transition: fill $transition;
     }
 
-    @media screen and (min-width: 768px) {
+    @include mq(tablet) {
     display: none;
     }
+}
+
+.menu-btn.is-active .menu-btn__icon {
+    position: fixed;
 }
 
 .menu-btn.is-active .menu-btn__icon-open {
