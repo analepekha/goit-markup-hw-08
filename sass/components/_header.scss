@@ -1,6 +1,5 @@
 .header {
     position: relative;
-    // z-index: 0;
     border-bottom: 1px solid #ececec;
     background-color: $mainLightBg;
 }
@@ -8,25 +7,18 @@
 .header__container {
     display: flex;
     align-items: center;
-
-    @media screen and (max-width: 767px) {
-        justify-content: space-between;
-    }
-
-    @media screen and (min-width:768px) {
-        
-    }
+    justify-content: space-between;
 }
 
 .nav {
     display: flex;
-    @media screen and (max-width: 767px) {
+    @include mq(mobile-only) {
         display: none;
     }
-    @media screen and (min-width:768px) {
+    @include mq(tablet) {
         margin-left: 88px;
     }
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
         margin-left: 93px;
     }
 }
@@ -86,16 +78,16 @@
 .contacts-header {
     display: flex;
     align-items: center;
-    @media screen and (max-width: 767px) {
+    @include mq(mobile-only) {
         display: none;
     }
 
-    @media screen and (min-width:768px) {
+    @include mq(tablet) {
         flex-wrap: wrap;    
         margin-left: 84px;    
     }
 
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
         margin-left: auto;
     }
 }
@@ -105,10 +97,10 @@
 }
 
 .contacts-header__item:not(:last-child){
-    @media screen and (min-width:768px) {
+    @include mq(tablet) {
         margin-bottom: 10px;
     }
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
         margin-right: 30px;
         margin-bottom: 0;
     }
@@ -128,12 +120,12 @@
         color: $accentColor;
     }
 
-    @media screen and (min-width:768px) {
+    @include mq(tablet) {
         font-size: 12px;
         line-height: 1.16;
     }
 
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
         font-size: 14px;
         line-height: 1.14;
         padding-top: 32px;
@@ -150,7 +142,7 @@
     width: 14px;
     height: 10px;
 
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
       width: 16px;
       height: 12px;
     }  
@@ -161,7 +153,7 @@
     width: 10px;
     height: 14px;
 
-    @media screen and (min-width:1200px) {
+    @include mq(desktop) {
         width: 10px;
         height: 16px;
     }
