@@ -28,6 +28,11 @@ ul {
   margin-bottom: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -1090,6 +1095,7 @@ img {
 
 @media screen and (min-width: 1200px) {
   .footer__join {
+    text-align: left;
     margin-left: 70px;
   }
 }
@@ -1488,6 +1494,12 @@ img {
 .portfolio-item {
   margin-right: 30px;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767.98px) {
+  .portfolio-item {
+    margin-right: 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199.98px) {
