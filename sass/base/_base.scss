@@ -2,7 +2,9 @@
 
 html,
 body {
+    @include mq(mobile-only) {
     overflow-x: hidden;
+    }
 }
 
 body {
