@@ -1589,6 +1589,7 @@ img {
 
 @media screen and (min-width: 1200px) {
   .overlay {
+    font-size: 18px;
     padding: 63px 24px;
   }
 }
