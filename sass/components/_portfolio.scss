@@ -43,6 +43,9 @@
 .portfolio-item {
     margin-right: 30px;
     margin-bottom: 30px;
+    @include mq(mobile-only){
+        margin-right: 0;
+    }
     @include mq(tablet-only) {
         width: calc((100% - 60px) / 2);
     }
