@@ -130,6 +130,7 @@
         padding: 49px 24px 77px 24px;
     }
     @include mq(desktop) {
+        font-size: 18px;
         padding: 63px 24px;
     }
 }
