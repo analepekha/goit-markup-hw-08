@@ -1,5 +1,10 @@
 @import "./reset";
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: $mainFont;
     font-size: 14px;
@@ -7,6 +12,7 @@ body {
     letter-spacing: 0.03em;
 
     color: $mainTextColor;
+    
 }
 
 img {
